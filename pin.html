@@ -1,0 +1,137 @@
+<html>
+
+
+
+<html><head></head><body><table border="1" cellpadding="50" align="center" width="100%">
+<tbody><tr>
+<td background="pr.jpg">
+<font size="8">Enter The PIN!</font>
+<table border="2" bgcolor="grey" cellpadding="12"cellspacing="1"align="center">
+<tr>
+<td><label id=l1 ></label></td>
+<td><label id=l2 ></label></td>
+<td><label id=l3 ></label></td>
+</tr>
+<tr>
+<td><label id=l4 ></label></td>
+<td><label id=l5 ></label></td>
+<td><label id=l6 ></label></td>
+</tr>
+<tr>
+<td><label id=l7 ></label></td>
+<td><label id=l8 ></label></td>
+<td><label id=l9 ></label></td>
+</tr>
+<tr>
+<td><label id=l* ></label></td>
+<td><label id=l0></label></td>
+<td><label id=l#></label></td>
+</tr>
+</table>
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<table border="2" bgcolor="grey" cellpadding="15"cellspacing="1"align="center">
+<tr>
+<td><input type="button" name=one value="1" onclick="p(this)"></td>
+<td><input type="button" name=two value="2" onclick="p(this)"></td>
+<td><input type="button" name=three value="3" onclick="p(this)"></td>
+</tr>
+<tr>
+<td><input type="button" name=four value="4" onclick="p(this)"></td>
+<td><input type="button" name=five value="5" onclick="p(this)"></td>
+<td><input type="button" name=six value="6" onclick="p(this)"></td>
+</tr>
+<tr>
+<td><input type="button" name=sevn value="7" onclick="p(this)"></td>
+<td><input type="button" name=eight value="8" onclick="p(this)"></td>
+<td><input type="button" name=nine value="9" onclick="p(this)"></td>
+</tr>
+<tr>
+<td><input type="button" name=star value="*" onclick="p(this)"></td>
+<td><input type="button" name=zero  value="0" onclick="p(this)"></td>
+<td><input type="button" name=hash value="#" onclick="p(this)"></td>
+</tr>
+</table>
+
+
+
+
+
+
+</td>
+</tr>
+</table>
+
+
+
+<script>
+function shuffle(arra1) {
+    var ctr = arra1.length, temp, index;
+
+// While there are elements in the array
+    while (ctr > 0) {
+// Pick a random index
+        index = Math.floor(Math.random() * ctr);
+// Decrease ctr by 1
+        ctr--;
+// And swap the last element with it
+        temp = arra1[ctr];
+        arra1[ctr] = arra1[index];
+        arra1[index] = temp;
+    }
+    return arra1;
+}
+var myArray = [ 1, 2, 3, 4, 5, 6, 7, 8, 9,0,'*','#'];
+//console.log(shuffle(myArray));
+var sarray=shuffle(myArray);
+
+document.getElementById("l1").innerHTML=sarray[1];
+document.getElementById("l2").innerHTML=sarray[2];
+document.getElementById("l3").innerHTML=sarray[3];
+document.getElementById("l4").innerHTML=sarray[4];
+document.getElementById("l5").innerHTML=sarray[5];
+document.getElementById("l6").innerHTML=sarray[6];
+document.getElementById("l7").innerHTML=sarray[7];
+document.getElementById("l8").innerHTML=sarray[8];
+document.getElementById("l9").innerHTML=sarray[9];
+document.getElementById("l0").innerHTML=sarray[0];
+document.getElementById("l*").innerHTML=sarray[10];
+document.getElementById("l#").innerHTML=sarray[11];
+
+
+
+var pin="";count=0;
+
+function p(button)
+{
+
+if(button.value=="*")
+{
+pin+=sarray[10];
+count+=1;
+alert("X");
+}
+else if(button.value=="#")
+{
+pin+=sarray[11];
+count+=1;
+alert("X");
+}
+else{
+pin+=sarray[button.value];
+count+=1;
+alert("X");
+}
+if(count==4)
+{
+alert("YOUR PIN IS XXXX");
+}}
+</script>
+
+
+</html>
